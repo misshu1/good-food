@@ -6,6 +6,7 @@ import { GlobalStyles } from "./components/style";
 import { Container } from "react-bootstrap";
 import NavBarApp from "./components/navbar/NavBarApp";
 import ShowcaseApp from "./components/showcase/ShowcaseApp";
+import AboutUsApp from "./components/aboutUs/AboutUsApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -70,6 +71,7 @@ class App extends PureComponent {
                     <Container>
                         <NavBarApp logo={logo} changeTheme={this.changeTheme} />
                         <ShowcaseApp />
+                        <AboutUsApp themeColor={logo} />
                     </Container>
                 </React.Fragment>
             </ThemeProvider>

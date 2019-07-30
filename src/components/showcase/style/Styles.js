@@ -13,7 +13,7 @@ export const Styles = styled.section`
 
     h2,
     p {
-        background: ${props => props.theme.textColor};
+        background: ${props => props.theme.showcaseBackground};
         margin: 0;
         width: fit-content;
         font-weight: 700;
@@ -22,6 +22,11 @@ export const Styles = styled.section`
 
     h2 {
         font-size: 6vw;
+        color: ${props => props.theme.showcaseHeaderColor};
+    }
+
+    p {
+        color: ${props => props.theme.showcaseTextColor};
     }
 
     .wrapper > span,
@@ -31,6 +36,11 @@ export const Styles = styled.section`
 
     .wrapper > span h3 {
         font-size: 5vw;
+        color: ${props => props.theme.showcaseTextColor};
+    }
+
+    .wrapper > span {
+        color: ${props => props.theme.showcaseHeaderColor};
     }
 
     .wrapper:before {
@@ -48,7 +58,7 @@ export const Styles = styled.section`
         flex-direction: column;
         justify-content: center;
         position: absolute;
-        background: ${props => props.theme.textColor};
+        background: ${props => props.theme.showcaseBackground};
         min-height: 7.5rem;
         height: fit-content;
         padding: 1rem;
