@@ -14,7 +14,7 @@ class NavBarApp extends PureComponent {
         }
     };
 
-    activeLink = name => {
+    handleActiveLink = name => {
         const newObj = {};
         Object.keys(this.state.activeLink).forEach(item => {
             newObj[item] = false;
@@ -35,8 +35,8 @@ class NavBarApp extends PureComponent {
         } = this.state.activeLink;
         return (
             <Styles>
-                <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand>
+                <Navbar bg="dark">
+                    <Navbar.Brand onClick={this.props.changeTheme}>
                         <Logo logo={this.props.logo}>
                             <span>Good</span>
                             <span>Food</span>
@@ -45,43 +45,43 @@ class NavBarApp extends PureComponent {
                     <Nav className="ml-auto desktop-menu">
                         <a
                             href="#home"
-                            onClick={() => this.activeLink("home")}
-                            id={home === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("home")}
+                            id={home ? "active" : ""}
                         >
                             Home
                         </a>
                         <a
                             href="#about"
-                            onClick={() => this.activeLink("about")}
-                            id={about === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("about")}
+                            id={about ? "active" : ""}
                         >
                             About Us
                         </a>
                         <a
                             href="#menu"
-                            onClick={() => this.activeLink("menu")}
-                            id={menu === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("menu")}
+                            id={menu ? "active" : ""}
                         >
                             Menu
                         </a>
                         <a
                             href="#location"
-                            onClick={() => this.activeLink("location")}
-                            id={location === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("location")}
+                            id={location ? "active" : ""}
                         >
                             Location
                         </a>
                         <a
                             href="#chef"
-                            onClick={() => this.activeLink("chef")}
-                            id={chef === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("chef")}
+                            id={chef ? "active" : ""}
                         >
                             Chef
                         </a>
                         <a
                             href="#contact"
-                            onClick={() => this.activeLink("contact")}
-                            id={contact === true ? "active" : ""}
+                            onClick={() => this.handleActiveLink("contact")}
+                            id={contact ? "active" : ""}
                         >
                             Contact Us
                         </a>

@@ -4,6 +4,7 @@ import RedLogo from "../img/logo-red.svg";
 
 export const Logo = styled.span`
     display: inline-block;
+    user-select: none;
     text-transform: uppercase;
     font-weight: 900;
     color: #fff;
@@ -12,10 +13,6 @@ export const Logo = styled.span`
     background-size: 55%;
     padding-left: 1.5rem;
     height: 2rem;
-
-    && span {
-        padding-bottom: 2rem;
-    }
 
     && span:nth-child(1) {
         color: ${props => props.theme.textColor};

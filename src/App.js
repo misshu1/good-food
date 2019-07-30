@@ -2,6 +2,10 @@ import React, { PureComponent } from "react";
 import { ThemeProvider } from "styled-components";
 import RedTheme from "./components/theme/RedTheme";
 import GreenTheme from "./components/theme/GreenTheme";
+import { GlobalStyles } from "./components/style";
+import { Container } from "react-bootstrap";
+import NavBarApp from "./components/navbar/NavBarApp";
+import ShowcaseApp from "./components/showcase/ShowcaseApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -15,9 +19,6 @@ import {
     faCalendarCheck,
     faUserTie
 } from "@fortawesome/free-solid-svg-icons";
-import { GlobalStyles } from "./components/style";
-import { Container } from "react-bootstrap";
-import NavBarApp from "./components/navbar/NavBarApp";
 
 library.add(
     fab,
@@ -34,20 +35,28 @@ library.add(
 
 class App extends PureComponent {
     state = {
-        theme: GreenTheme,
-        logo: "green"
+        theme: localStorage.theme === "red" ? RedTheme : GreenTheme,
+        logo: localStorage.theme === "red" ? "red" : "green"
     };
 
-    changeTheme = theme => {
-        if (theme === "green") {
-            this.setState({
-                theme: GreenTheme,
-                logo: "green"
-            });
-        } else if (theme === "red") {
+    componentDidMount = () => {
+        if (!localStorage.theme) {
+            localStorage.setItem("theme", "green");
+        }
+    };
+
+    changeTheme = () => {
+        if (localStorage.theme === "green") {
+            localStorage.setItem("theme", "red");
             this.setState({
                 theme: RedTheme,
                 logo: "red"
+            });
+        } else if (localStorage.theme === "red") {
+            localStorage.setItem("theme", "green");
+            this.setState({
+                theme: GreenTheme,
+                logo: "green"
             });
         }
     };
@@ -59,7 +68,8 @@ class App extends PureComponent {
                 <React.Fragment>
                     <GlobalStyles />
                     <Container>
-                        <NavBarApp logo={logo} />
+                        <NavBarApp logo={logo} changeTheme={this.changeTheme} />
+                        <ShowcaseApp />
                     </Container>
                 </React.Fragment>
             </ThemeProvider>
