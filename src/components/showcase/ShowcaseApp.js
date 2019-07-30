@@ -3,7 +3,7 @@ import { Styles } from "./style";
 
 const ShowcaseApp = props => {
     return (
-        <Styles data>
+        <Styles id="home">
             <h2>GoodFood Restaurant</h2>
             <p>is the place where you can hold</p>
             <p>meetings and business dinners,</p>

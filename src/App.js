@@ -7,9 +7,11 @@ import { Container } from "react-bootstrap";
 import NavBarApp from "./components/navbar/NavBarApp";
 import ShowcaseApp from "./components/showcase/ShowcaseApp";
 import AboutUsApp from "./components/aboutUs/AboutUsApp";
+import OurMenuApp from "./components/ourMenu/OurMenuApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
+    faStar,
     faConciergeBell,
     faUtensils,
     faListAlt,
@@ -22,6 +24,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
+    faStar,
     fab,
     faConciergeBell,
     faUtensils,
@@ -72,6 +75,7 @@ class App extends PureComponent {
                         <NavBarApp logo={logo} changeTheme={this.changeTheme} />
                         <ShowcaseApp />
                         <AboutUsApp themeColor={logo} />
+                        <OurMenuApp />
                     </Container>
                 </React.Fragment>
             </ThemeProvider>

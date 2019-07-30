@@ -3,8 +3,6 @@ import iconRed from "../img/icon_red.svg";
 import iconGreen from "../img/icon_green.svg";
 
 export const Styles = styled.section`
-    @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap");
-
     padding: 2rem 1rem 3rem 1rem;
     position: relative;
 

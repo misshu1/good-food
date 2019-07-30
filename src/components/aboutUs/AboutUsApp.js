@@ -5,7 +5,7 @@ import aboutIcon from "./img/about_icon.png";
 
 const AboutUsApp = props => {
     return (
-        <Styles themeColor={props.themeColor}>
+        <Styles themeColor={props.themeColor} id="about">
             <h2>
                 About Us <img src={aboutIcon} />
             </h2>
