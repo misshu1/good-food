@@ -31,6 +31,7 @@ const slideFromRight = keyframes`
 `;
 
 export const Styles = styled.section`
+    z-index: -1;
     position: relative;
     background: url(${bg}) no-repeat;
     background-size: cover;

@@ -45,7 +45,7 @@ class LocationApp extends Component {
         markerGreen: greenMarker
     };
 
-    componentDidUpdate = prevProps => {
+    shouldComponentUpdate = (prevProps, nextState) => {
         if (prevProps.theme !== this.state.theme) {
             this.setState(
                 {
@@ -54,7 +54,9 @@ class LocationApp extends Component {
                 },
                 this.renderMarkers
             );
+            return true;
         }
+        return false;
     };
 
     renderMarkers = () => {
@@ -113,7 +115,7 @@ class LocationApp extends Component {
     render() {
         const { selectedPlace, activeMarker, showingInfoWindow } = this.state;
         return (
-            <Styles>
+            <Styles id="location">
                 <LocationTitle>
                     <h2>You Want To Stand Here?</h2>
                     <div className="button">
@@ -127,7 +129,7 @@ class LocationApp extends Component {
                     key={this.state.mapKey}
                     google={this.props.google}
                     onReady={this.renderMarkers()}
-                    zoom={15}
+                    zoom={14}
                     style={mapSize}
                     styles={MapStyle}
                     initialCenter={{

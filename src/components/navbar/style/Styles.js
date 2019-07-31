@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.5);
+    .desktop-menu {
+        display: none;
+    }
     .desktop-menu a {
         position: relative;
         padding: 0 0.5rem;
@@ -35,5 +43,10 @@ export const Styles = styled.div`
         bottom: -1rem;
         left: 0;
         transition: all 0.3s;
+    }
+    @media only screen and (min-width: 48rem) {
+        .desktop-menu {
+            display: block;
+        }
     }
 `;

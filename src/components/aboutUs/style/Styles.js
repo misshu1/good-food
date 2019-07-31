@@ -34,6 +34,7 @@ const slideDown = keyframes`
 `;
 
 export const Styles = styled.section`
+    z-index: -2;
     padding: 2rem 1rem 3rem 1rem;
     position: relative;
 

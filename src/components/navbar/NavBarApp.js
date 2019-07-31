@@ -42,7 +42,7 @@ class NavBarApp extends PureComponent {
                             <span>Food</span>
                         </Logo>
                     </Navbar.Brand>
-                    {/* <Nav className="ml-auto desktop-menu">
+                    <Nav className="ml-auto desktop-menu">
                         <a
                             href="#home"
                             onClick={() => this.handleActiveLink("home")}
@@ -85,7 +85,7 @@ class NavBarApp extends PureComponent {
                         >
                             Contact Us
                         </a>
-                    </Nav> */}
+                    </Nav>
                 </Navbar>
             </Styles>
         );
