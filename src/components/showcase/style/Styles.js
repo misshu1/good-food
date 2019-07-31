@@ -1,6 +1,34 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bg from "../img/pic.jpg";
 import thread from "../img/thread.png";
+
+const fadeIn = keyframes`
+0% {
+    transform: scale3d(.7, .7, .7) translate3d(-5rem, -5rem, 0);
+}
+100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+}
+`;
+
+const slideFromLeftThread = keyframes`
+0% {
+    background-position: 0 0;
+}
+100% {
+    background-position: 100% 0;
+}
+`;
+
+const slideFromRight = keyframes`
+0% {
+    transform: translate3d(-10vw, 0, 0);
+}
+100% {
+    transform:  translate3d(0, 0, 0);
+}
+`;
 
 export const Styles = styled.section`
     position: relative;
@@ -11,7 +39,7 @@ export const Styles = styled.section`
     padding: 1rem;
     text-transform: uppercase;
 
-    h2,
+    .text h2,
     p {
         background: ${props => props.theme.showcaseBackground};
         margin: 0;
@@ -20,13 +48,18 @@ export const Styles = styled.section`
         padding: 0 0.5rem;
     }
 
-    h2 {
+    .text h2 {
         font-size: 6vw;
         color: ${props => props.theme.showcaseHeaderColor};
     }
 
-    p {
+    .text p {
         color: ${props => props.theme.showcaseTextColor};
+    }
+    .text {
+        opacity: 0;
+        animation: ${fadeIn} 0.5s ease-out forwards;
+        animation-delay: 0.2s;
     }
 
     .wrapper > span,
@@ -51,6 +84,7 @@ export const Styles = styled.section`
         width: 100%;
         left: 0;
         bottom: 7rem;
+        animation: ${slideFromLeftThread} 1s ease-out forwards;
     }
 
     .wrapper > span {
@@ -67,6 +101,7 @@ export const Styles = styled.section`
         bottom: -0.8rem;
         font-weight: 500;
         box-shadow: 0px 8px 5px 1px rgba(0, 0, 0, 0.15);
+        animation: ${slideFromRight} 1s ease-out forwards;
     }
 
     .wrapper > span:after {
@@ -99,7 +134,7 @@ export const Styles = styled.section`
     }
 
     @media only screen and (min-width: 31rem) {
-        h2 {
+        .text h2 {
             font-size: 2rem;
         }
 
@@ -117,11 +152,11 @@ export const Styles = styled.section`
         padding: 5rem;
         height: 30rem;
 
-        h2 {
+        .text h2 {
             font-size: 2rem;
         }
 
-        p {
+        .text p {
             font-size: 1rem;
         }
     }

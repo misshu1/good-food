@@ -6,12 +6,14 @@ import aboutIcon from "./img/about_icon.png";
 const AboutUsApp = props => {
     return (
         <Styles themeColor={props.themeColor} id="about">
-            <h2>
-                About Us <img src={aboutIcon} alt="about us icon" />
-            </h2>
-            <h5 className="subtitle">`Good Food` Restaurant</h5>
+            <div className="about-title">
+                <h2>
+                    About Us <img src={aboutIcon} alt="about us icon" />
+                </h2>
+                <h5 className="subtitle">`Good Food` Restaurant</h5>
+            </div>
             <Row>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className="left-text">
                     <h5>Our Psyhology</h5>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and
@@ -21,7 +23,7 @@ const AboutUsApp = props => {
                         scrambled.
                     </p>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} className="right-text">
                     <h5>Our Motivation</h5>
                     <p>
                         It has survived not only five centuries, but also the

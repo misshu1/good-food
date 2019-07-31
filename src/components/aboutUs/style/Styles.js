@@ -1,10 +1,58 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import iconRed from "../img/icon_red.svg";
 import iconGreen from "../img/icon_green.svg";
+
+const fadeIn = keyframes`
+0% {
+    transform: scale3d(.7, .7, .7);
+}
+100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+
+}
+`;
+
+const slideUp = keyframes`
+0% {
+    transform: translate3d(0, -10rem, 0);
+}
+100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+`;
+
+const slideDown = keyframes`
+0% {
+    transform: translate3d(0, 10rem, 0);
+}
+100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+`;
 
 export const Styles = styled.section`
     padding: 2rem 1rem 3rem 1rem;
     position: relative;
+
+    .about-title {
+        opacity: 0;
+        animation: ${fadeIn} 0.3s ease-out forwards;
+        animation-delay: 0.6s;
+    }
+    .left-text {
+        opacity: 0;
+        animation: ${slideDown} 0.5s ease-out forwards;
+        animation-delay: 0.9s;
+    }
+
+    .right-text {
+        opacity: 0;
+        animation: ${slideUp} 0.5s ease-out forwards;
+        animation-delay: 0.9s;
+    }
 
     p {
         font-size: 3vw;

@@ -4,11 +4,13 @@ import { Styles } from "./style";
 const ShowcaseApp = props => {
     return (
         <Styles id="home">
-            <h2>GoodFood Restaurant</h2>
-            <p>is the place where you can hold</p>
-            <p>meetings and business dinners,</p>
-            <p>anniversaries or any important</p>
-            <p>event of your life</p>
+            <div className="text">
+                <h2>GoodFood Restaurant</h2>
+                <p>is the place where you can hold</p>
+                <p>meetings and business dinners,</p>
+                <p>anniversaries or any important</p>
+                <p>event of your life</p>
+            </div>
             <span className="wrapper">
                 <span>
                     <h3>Open Daily</h3>
