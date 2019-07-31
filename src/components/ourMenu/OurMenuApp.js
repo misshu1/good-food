@@ -10,7 +10,7 @@ const OurMenuApp = () => {
     return (
         <Styles id="menu">
             <h2>
-                Our Menu <img src={ourMenuIcon} />
+                Our Menu <img src={ourMenuIcon} alt="menu icon" />
             </h2>
             <h3>
                 <img
@@ -19,6 +19,7 @@ const OurMenuApp = () => {
                             ? menuIconRed
                             : menuIconGreen
                     }
+                    alt="menu icon"
                 />{" "}
                 Menu of the day
             </h3>

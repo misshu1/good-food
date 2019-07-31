@@ -15,7 +15,10 @@ const RedTheme = {
     ourMenuBackground: red,
     ourMenuDefaultColor: primary,
     ourMenuSecondaryColor: secondary,
-    ourMenuPriceBackground: "#000"
+    ourMenuPriceBackground: "#000",
+
+    //Location Colors
+    locationBackground: secondary
 };
 
 export default RedTheme;

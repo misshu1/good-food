@@ -78,6 +78,7 @@ export const Styles = styled.section`
         width: 1.2rem;
         right: 10%;
         top: -1rem;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
     }
 
     .wrapper > span:before {
@@ -89,6 +90,7 @@ export const Styles = styled.section`
         width: 1.2rem;
         left: 10%;
         top: -1rem;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
     }
 
     .wrapper > span h3 {

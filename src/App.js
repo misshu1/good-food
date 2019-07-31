@@ -8,6 +8,7 @@ import NavBarApp from "./components/navbar/NavBarApp";
 import ShowcaseApp from "./components/showcase/ShowcaseApp";
 import AboutUsApp from "./components/aboutUs/AboutUsApp";
 import OurMenuApp from "./components/ourMenu/OurMenuApp";
+import LocationApp from "./components/location/LocationApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -76,6 +77,7 @@ class App extends PureComponent {
                         <ShowcaseApp />
                         <AboutUsApp themeColor={logo} />
                         <OurMenuApp />
+                        <LocationApp theme={logo} />
                     </Container>
                 </React.Fragment>
             </ThemeProvider>

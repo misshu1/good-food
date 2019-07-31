@@ -70,9 +70,10 @@ export const Styles = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 3vw;
         background: ${props => props.theme.ourMenuDefaultColor};
-        width: 2rem;
-        height: 2rem;
+        width: 7vw;
+        height: 7vw;
         border-radius: 100%;
         color: #000;
     }
@@ -84,11 +85,12 @@ export const Styles = styled.section`
 
     .view-more {
         cursor: pointer;
-        position: relative;
         display: inline-block;
-        text-align: center;
+        position: relative;
         background: rgba(255, 255, 255, 0.3);
+        text-align: center;
         width: 100%;
+        font-size: 3vw;
     }
 
     .view-more:after {
@@ -117,6 +119,16 @@ export const Styles = styled.section`
 
         .hr-name {
             font-size: 0.7rem;
+        }
+
+        .view-more {
+            font-size: 1rem;
+        }
+
+        .circle {
+            font-size: 1rem;
+            width: 2rem;
+            height: 2rem;
         }
 
         h2 {

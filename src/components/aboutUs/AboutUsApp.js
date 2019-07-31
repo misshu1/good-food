@@ -7,7 +7,7 @@ const AboutUsApp = props => {
     return (
         <Styles themeColor={props.themeColor} id="about">
             <h2>
-                About Us <img src={aboutIcon} />
+                About Us <img src={aboutIcon} alt="about us icon" />
             </h2>
             <h5 className="subtitle">`Good Food` Restaurant</h5>
             <Row>

@@ -15,7 +15,10 @@ const GreenTheme = {
     ourMenuBackground: "#83a700",
     ourMenuDefaultColor: primary,
     ourMenuSecondaryColor: secondary,
-    ourMenuPriceBackground: primary
+    ourMenuPriceBackground: primary,
+
+    //Location Colors
+    locationBackground: green
 };
 
 export default GreenTheme;
