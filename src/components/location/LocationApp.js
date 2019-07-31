@@ -18,7 +18,8 @@ class LocationApp extends Component {
         activeMarker: {},
         selectedPlace: {},
         theme: this.props.theme,
-        mapKey: 1234,
+        mapKey: Math.random(),
+        infowWindowKey: Math.random() + 1,
         places: [
             {
                 name: "Tweed Courthouse",
@@ -50,7 +51,8 @@ class LocationApp extends Component {
             this.setState(
                 {
                     theme: this.state.theme === "green" ? "red" : "green",
-                    mapKey: Math.random()
+                    mapKey: Math.random(),
+                    infowWindowKey: Math.random() + 1
                 },
                 this.renderMarkers
             );
@@ -58,6 +60,20 @@ class LocationApp extends Component {
         }
         return false;
     };
+
+    // componentDidUpdate = async prevProps => {
+    //     if (prevProps.theme !== this.state.theme) {
+    //         await this.setState(
+    //             {
+    //                 theme: this.state.theme === "green" ? "red" : "green",
+    //                 mapKey: Math.random(),
+    //                 infowWindowKey: Math.random() + 1
+    //             },
+    //             this.renderMarkers
+    //         );
+    //         await this.forceUpdate();
+    //     }
+    // };
 
     renderMarkers = () => {
         allMarkers = [];
@@ -139,6 +155,7 @@ class LocationApp extends Component {
                 >
                     {allMarkers}
                     <InfoWindow
+                        key={this.state.infowWindowKey}
                         marker={activeMarker}
                         visible={showingInfoWindow}
                         onClose={this.onClose}
