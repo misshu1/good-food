@@ -4,7 +4,7 @@ import thread from "../img/thread.png";
 
 const fadeIn = keyframes`
 0% {
-    transform: scale3d(.7, .7, .7) translate3d(-5rem, -5rem, 0);
+    transform: scale3d(.7, .7, .7) translate3d(0, -5rem, 0);
 }
 100% {
     opacity: 1;
@@ -17,7 +17,7 @@ const slideFromLeftThread = keyframes`
     background-position: 0 0;
 }
 100% {
-    background-position: 100% 0;
+    background-position: 10vw 0;
 }
 `;
 
@@ -57,6 +57,7 @@ export const Styles = styled.section`
         color: ${props => props.theme.showcaseTextColor};
     }
     .text {
+        width: fit-content;
         opacity: 0;
         animation: ${fadeIn} 0.5s ease-out forwards;
         animation-delay: 0.2s;

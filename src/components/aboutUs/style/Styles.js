@@ -38,9 +38,10 @@ export const Styles = styled.section`
     position: relative;
 
     .about-title {
+        width: fit-content;
         opacity: 0;
         animation: ${fadeIn} 0.3s ease-out forwards;
-        animation-delay: 0.6s;
+        animation-delay: 0.7s;
     }
     .left-text {
         opacity: 0;

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { Styles, LocationTitle, MapStyle } from "./style";
 import { Row, Col } from "react-bootstrap";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
@@ -12,12 +12,13 @@ const mapSize = {
 let allMarkers = [];
 const LoadingContainer = () => null;
 
-class LocationApp extends PureComponent {
+class LocationApp extends Component {
     state = {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
         theme: this.props.theme,
+        mapKey: 1234,
         places: [
             {
                 name: "Tweed Courthouse",
@@ -44,9 +45,21 @@ class LocationApp extends PureComponent {
         markerGreen: greenMarker
     };
 
+    componentDidUpdate = prevProps => {
+        if (prevProps.theme !== this.state.theme) {
+            this.setState(
+                {
+                    theme: this.state.theme === "green" ? "red" : "green",
+                    mapKey: Math.random()
+                },
+                this.renderMarkers
+            );
+        }
+    };
+
     renderMarkers = () => {
         allMarkers = [];
-        return this.state.places.forEach(loc => {
+        this.state.places.forEach(loc => {
             allMarkers = [
                 ...allMarkers,
                 <Marker
@@ -111,6 +124,7 @@ class LocationApp extends PureComponent {
                     </div>
                 </LocationTitle>
                 <Map
+                    key={this.state.mapKey}
                     google={this.props.google}
                     onReady={this.renderMarkers()}
                     zoom={15}
