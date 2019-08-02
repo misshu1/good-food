@@ -6,6 +6,11 @@ export const Styles = styled.div`
     width: 100%;
     z-index: 5;
     box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.5);
+
+    .navbar-custom {
+        padding: 0.5rem 5rem;
+    }
+
     .desktop-menu {
         display: none;
     }

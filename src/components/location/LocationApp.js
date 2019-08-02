@@ -36,7 +36,7 @@ class LocationApp extends Component {
             {
                 name: "P.S. 89 Liberty",
                 id: "2",
-                address: "201 Warren St, NY 10282,",
+                address: "201 Warren St, NY 10282",
                 state: "New York",
                 coordonates: {
                     lat: 40.7171033,

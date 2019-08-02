@@ -35,7 +35,7 @@ class NavBarApp extends PureComponent {
         } = this.state.activeLink;
         return (
             <Styles>
-                <Navbar bg="dark">
+                <Navbar bg="dark" className="navbar-custom">
                     <Navbar.Brand onClick={this.props.changeTheme}>
                         <Logo logo={this.props.logo}>
                             <span>Good</span>

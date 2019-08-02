@@ -4,6 +4,8 @@
 
 [https://good-food-landing-page.netlify.com/](https://good-food-landing-page.netlify.com/)
 
+![Desktop Version](./readme/good-food.png)
+
 ### About
 
 -   Good Food landing page
