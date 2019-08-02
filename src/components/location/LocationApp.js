@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Styles, LocationTitle, MapStyle } from "./style";
+import { Styles, LocationTitle, MapStyle, LocationDetails } from "./style";
 import { Row, Col } from "react-bootstrap";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import greenMarker from "./img/green_marker.png";
 import redMarker from "./img/red_marker.png";
+import locationIcon from "./img/location_icon.png";
+import clockIcon from "./img/clock.png";
 
 const mapSize = {
-    wodth: "100%",
-    height: "20rem"
+    width: "100%",
+    height: "100%"
 };
 
 const LoadingContainer = () => null;
@@ -129,6 +131,50 @@ class LocationApp extends Component {
                         </div>
                     </div>
                 </LocationTitle>
+                <LocationDetails>
+                    <h2>
+                        Locations{" "}
+                        <img src={locationIcon} alt="location marker" />
+                    </h2>
+                    <Row>
+                        <Col xs={12} md={6} className="mb-4 left">
+                            <h5>Boston</h5>
+                            <p className="info">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard
+                            </p>
+                            <div className="open-hours">
+                                <p>
+                                    <img src={clockIcon} alt="clock" />{" "}
+                                    <span className="vertical-line">
+                                        Open Daily: Mon-Fri: 10am - 10pm
+                                    </span>
+                                    <br className="line-breack" />
+                                    Sat-Sun: 09am - 11pm
+                                </p>
+                            </div>
+                        </Col>
+                        <Col xs={12} md={6} className="mb-4 right">
+                            <h5>New Orleans</h5>
+                            <p className="info">
+                                Dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it
+                                to make a type specimen book.
+                            </p>
+                            <div className="open-hours">
+                                <p>
+                                    <img src={clockIcon} alt="clock" />{" "}
+                                    <span className="vertical-line">
+                                        Open Daily: Mon-Fri: 10am - 9pm
+                                    </span>
+                                    <br className="line-breack" />
+                                    Sat-Sun: 09am - 10pm
+                                </p>
+                            </div>
+                        </Col>
+                    </Row>
+                </LocationDetails>
                 <Map
                     key={this.state.mapKey}
                     google={this.props.google}

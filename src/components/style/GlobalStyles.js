@@ -5,6 +5,6 @@ export const GlobalStyles = createGlobalStyle`
     @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap");
     ${normalize}
 * {
-    transition: all .2s;
+    transition: background .2s, color .2s;
 }
 `;

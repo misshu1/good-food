@@ -62,6 +62,7 @@ export const Styles = styled.section`
 
     h2 {
         font-family: "Alfa Slab One", cursive;
+        text-transform: uppercase;
         font-size: 9vw;
         margin: 0;
     }
