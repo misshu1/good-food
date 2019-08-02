@@ -9,34 +9,16 @@ import ShowcaseApp from "./components/showcase/ShowcaseApp";
 import AboutUsApp from "./components/aboutUs/AboutUsApp";
 import OurMenuApp from "./components/ourMenu/OurMenuApp";
 import LocationApp from "./components/location/LocationApp";
+import FooterApp from "./components/footer/FooterApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faStar, faPhone, faWifi } from "@fortawesome/free-solid-svg-icons";
 import {
-    faStar,
-    faConciergeBell,
-    faUtensils,
-    faListAlt,
-    faClipboardList,
-    faMapMarkerAlt,
-    faClock,
-    faMitten,
-    faCalendarCheck,
-    faUserTie
-} from "@fortawesome/free-solid-svg-icons";
+    faFacebook,
+    faTwitter,
+    faGooglePlusG
+} from "@fortawesome/free-brands-svg-icons";
 
-library.add(
-    faStar,
-    fab,
-    faConciergeBell,
-    faUtensils,
-    faListAlt,
-    faClipboardList,
-    faMapMarkerAlt,
-    faClock,
-    faMitten,
-    faCalendarCheck,
-    faUserTie
-);
+library.add(faStar, faPhone, faWifi, faFacebook, faTwitter, faGooglePlusG);
 
 class App extends PureComponent {
     state = {
@@ -78,6 +60,7 @@ class App extends PureComponent {
                         <AboutUsApp themeColor={logo} />
                         <OurMenuApp />
                         <LocationApp theme={logo} />
+                        <FooterApp />
                     </Container>
                 </React.Fragment>
             </ThemeProvider>

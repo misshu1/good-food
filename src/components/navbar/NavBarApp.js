@@ -22,6 +22,7 @@ class NavBarApp extends PureComponent {
 
         const actived = Object.assign({}, newObj, { [name]: true });
         this.setState({ activeLink: actived });
+        console.log(window.location.href);
     };
 
     render() {
@@ -83,7 +84,7 @@ class NavBarApp extends PureComponent {
                             onClick={() => this.handleActiveLink("contact")}
                             id={contact ? "active" : ""}
                         >
-                            Contact Us
+                            Contact us
                         </a>
                     </Nav>
                 </Navbar>

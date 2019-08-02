@@ -7,11 +7,6 @@ import redMarker from "./img/red_marker.png";
 import locationIcon from "./img/location_icon.png";
 import clockIcon from "./img/clock.png";
 
-const mapSize = {
-    width: "100%",
-    height: "100%"
-};
-
 const LoadingContainer = () => null;
 
 class LocationApp extends Component {
@@ -176,10 +171,10 @@ class LocationApp extends Component {
                     </Row>
                 </LocationDetails>
                 <Map
+                    className="map"
                     key={this.state.mapKey}
                     google={this.props.google}
                     zoom={14}
-                    style={mapSize}
                     styles={MapStyle}
                     initialCenter={{
                         lat: 40.7180088,

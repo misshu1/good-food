@@ -18,7 +18,10 @@ const GreenTheme = {
     ourMenuPriceBackground: primary,
 
     //Location Colors
-    locationBackground: green
+    locationBackground: green,
+
+    //Footer Colors
+    iconsColor: green
 };
 
 export default GreenTheme;

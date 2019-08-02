@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Styles = styled.section`
-    position: relative;
-    height: 20rem;
+    .map {
+        position: relative !important;
+        width: 100% !important;
+        height: 20rem !important;
+    }
 `;

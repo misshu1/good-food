@@ -8,12 +8,13 @@ export const Styles = styled.div`
     box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.5);
 
     .navbar-custom {
-        padding: 0.5rem 5rem;
+        padding: 0.5rem 1rem;
     }
 
     .desktop-menu {
         display: none;
     }
+
     .desktop-menu a {
         position: relative;
         padding: 0 0.5rem;
@@ -49,7 +50,14 @@ export const Styles = styled.div`
         left: 0;
         transition: all 0.3s;
     }
+
     @media only screen and (min-width: 48rem) {
+        .navbar-custom {
+            padding: 0.5rem 5rem;
+        }
+    }
+
+    @media only screen and (min-width: 62rem) {
         .desktop-menu {
             display: block;
         }
