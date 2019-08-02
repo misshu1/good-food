@@ -9,7 +9,7 @@ const mapSize = {
     wodth: "100%",
     height: "20rem"
 };
-let allMarkers = [];
+
 const LoadingContainer = () => null;
 
 class LocationApp extends Component {
@@ -17,7 +17,7 @@ class LocationApp extends Component {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
-        theme: this.props.theme,
+        allMarkers: [],
         mapKey: Math.random(),
         infowWindowKey: Math.random() + 1,
         places: [
@@ -46,40 +46,27 @@ class LocationApp extends Component {
         markerGreen: greenMarker
     };
 
-    shouldComponentUpdate = (prevProps, nextState) => {
-        if (prevProps.theme !== this.state.theme) {
+    componentDidMount = () => {
+        this.renderMarkers();
+    };
+
+    componentDidUpdate = prevProps => {
+        if (prevProps.theme !== this.props.theme) {
             this.setState(
                 {
-                    theme: this.state.theme === "green" ? "red" : "green",
                     mapKey: Math.random(),
                     infowWindowKey: Math.random() + 1
                 },
                 this.renderMarkers
             );
-            return true;
         }
-        return false;
     };
 
-    // componentDidUpdate = async prevProps => {
-    //     if (prevProps.theme !== this.state.theme) {
-    //         await this.setState(
-    //             {
-    //                 theme: this.state.theme === "green" ? "red" : "green",
-    //                 mapKey: Math.random(),
-    //                 infowWindowKey: Math.random() + 1
-    //             },
-    //             this.renderMarkers
-    //         );
-    //         await this.forceUpdate();
-    //     }
-    // };
-
     renderMarkers = () => {
-        allMarkers = [];
+        let markers = [];
         this.state.places.forEach(loc => {
-            allMarkers = [
-                ...allMarkers,
+            markers = [
+                ...markers,
                 <Marker
                     key={loc.id}
                     onClick={this.onMarkerClick}
@@ -90,13 +77,14 @@ class LocationApp extends Component {
                     animation={window.google.maps.Animation.DROP}
                     options={{
                         icon:
-                            this.state.theme === "green"
+                            this.props.theme === "green"
                                 ? this.state.markerGreen
                                 : this.state.markerRed
                     }}
                 />
             ];
         });
+        return this.setState({ allMarkers: markers });
     };
 
     onMarkerClick = async (props, marker, e) => {
@@ -144,7 +132,6 @@ class LocationApp extends Component {
                 <Map
                     key={this.state.mapKey}
                     google={this.props.google}
-                    onReady={this.renderMarkers()}
                     zoom={14}
                     style={mapSize}
                     styles={MapStyle}
@@ -153,7 +140,7 @@ class LocationApp extends Component {
                         lng: -74.0128065
                     }}
                 >
-                    {allMarkers}
+                    {this.state.allMarkers}
                     <InfoWindow
                         key={this.state.infowWindowKey}
                         marker={activeMarker}
