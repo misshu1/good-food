@@ -23,9 +23,11 @@ const slideFromLeftThread = keyframes`
 
 const slideFromRight = keyframes`
 0% {
+    opacity:1;
     transform: translate3d(-10vw, 0, 0);
 }
 100% {
+    opacity:1;
     transform:  translate3d(0, 0, 0);
 }
 `;
@@ -61,7 +63,7 @@ export const Styles = styled.section`
         width: fit-content;
         opacity: 0;
         animation: ${fadeIn} 0.5s ease-out forwards;
-        animation-delay: 0.2s;
+        animation-delay: 3.2s;
     }
 
     .wrapper > span,
@@ -87,9 +89,11 @@ export const Styles = styled.section`
         left: 0;
         bottom: 7rem;
         animation: ${slideFromLeftThread} 1s ease-out forwards;
+        animation-delay: 3s;
     }
 
     .wrapper > span {
+        opacity: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -104,6 +108,7 @@ export const Styles = styled.section`
         font-weight: 500;
         box-shadow: 0px 8px 5px 1px rgba(0, 0, 0, 0.15);
         animation: ${slideFromRight} 1s ease-out forwards;
+        animation-delay: 3s;
     }
 
     .wrapper > span:after {

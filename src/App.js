@@ -10,15 +10,16 @@ import AboutUsApp from "./components/aboutUs/AboutUsApp";
 import OurMenuApp from "./components/ourMenu/OurMenuApp";
 import LocationApp from "./components/location/LocationApp";
 import FooterApp from "./components/footer/FooterApp";
+import LoadingAnimation from "./components/loadingAnimation/LoadingAnimation";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar, faPhone, faWifi } from "@fortawesome/free-solid-svg-icons";
 import {
-    faFacebook,
+    faFacebookF,
     faTwitter,
     faGooglePlusG
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faStar, faPhone, faWifi, faFacebook, faTwitter, faGooglePlusG);
+library.add(faStar, faPhone, faWifi, faFacebookF, faTwitter, faGooglePlusG);
 
 class App extends PureComponent {
     state = {
@@ -49,11 +50,12 @@ class App extends PureComponent {
     };
 
     render() {
-        const { theme, logo } = this.state;
+        const { theme, logo, loading } = this.state;
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
                     <GlobalStyles />
+                    <LoadingAnimation logo={logo} />
                     <Container>
                         <NavBarApp logo={logo} changeTheme={this.changeTheme} />
                         <ShowcaseApp />

@@ -24,9 +24,11 @@ export const Styles = styled.footer`
     }
 
     .links a {
+        display: inline-block;
         color: #fff;
         text-decoration: none;
         padding: 0.5rem;
+        min-width: fit-content;
     }
 
     .links a:hover {

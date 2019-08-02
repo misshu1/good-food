@@ -5,11 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FooterApp = props => {
     return (
-        <Styles>
+        <Styles id="contact">
             <h2 className="pt-4">You have other questions?</h2>
             <span className="phone-info pb-4">
                 <span>Please call the following telephone number </span>
-                <span>+1 504-123-1234</span>
+                <span>
+                    +1 504-123-1234 <FontAwesomeIcon icon={["fas", "phone"]} />
+                </span>
             </span>
 
             <Row className="footer">
@@ -36,7 +38,7 @@ const FooterApp = props => {
                     </span>
                     <span className="icons">
                         <FontAwesomeIcon
-                            icon={["fab", "facebook"]}
+                            icon={["fab", "facebook-f"]}
                             size="lg"
                             style={{ color: "#000" }}
                         />
