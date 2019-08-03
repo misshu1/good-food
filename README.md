@@ -13,6 +13,7 @@
 ### Features
 
 -   Used localStorage to save site theme (click on the logo to change theme)
+-   Used sessionStorage to save the loading animation
 -   Used Google Maps API to show restaurant locations
 -   Aded custom animations
 -   Mobile friendly design

@@ -25,7 +25,7 @@ class App extends PureComponent {
     state = {
         theme: localStorage.theme === "red" ? RedTheme : GreenTheme,
         logo: localStorage.theme === "red" ? "red" : "green",
-        loading: localStorage.loading === "false" ? "false" : null
+        loading: sessionStorage.loading === "false" ? "false" : null
     };
 
     componentDidMount = () => {
@@ -36,8 +36,8 @@ class App extends PureComponent {
     };
 
     loadingAnimationHandler = () => {
-        if (!localStorage.loading) {
-            localStorage.setItem("loading", "false");
+        if (!sessionStorage.loading) {
+            sessionStorage.setItem("loading", "false");
             setTimeout(() => {
                 this.setState({
                     loading: "false"
