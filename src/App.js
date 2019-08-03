@@ -11,15 +11,29 @@ import OurMenuApp from "./components/ourMenu/OurMenuApp";
 import LocationApp from "./components/location/LocationApp";
 import FooterApp from "./components/footer/FooterApp";
 import LoadingAnimation from "./components/loadingAnimation/LoadingAnimation";
+import TeamApp from "./components/team/TeamApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar, faPhone, faWifi } from "@fortawesome/free-solid-svg-icons";
+import {
+    faStar,
+    faPhone,
+    faWifi,
+    faBars
+} from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebookF,
     faTwitter,
     faGooglePlusG
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faStar, faPhone, faWifi, faFacebookF, faTwitter, faGooglePlusG);
+library.add(
+    faStar,
+    faPhone,
+    faWifi,
+    faFacebookF,
+    faTwitter,
+    faGooglePlusG,
+    faBars
+);
 
 class App extends PureComponent {
     state = {
@@ -75,6 +89,7 @@ class App extends PureComponent {
                         <AboutUsApp themeColor={logo} />
                         <OurMenuApp />
                         <LocationApp theme={logo} />
+                        <TeamApp />
                         <FooterApp />
                     </Container>
                 </React.Fragment>

@@ -87,6 +87,50 @@ class NavBarApp extends PureComponent {
                             Contact us
                         </a>
                     </Nav>
+                    <Nav className="mobile-menu">
+                        <a
+                            href="#home"
+                            onClick={() => this.handleActiveLink("home")}
+                            id={home ? "active" : ""}
+                        >
+                            Home
+                        </a>
+                        <a
+                            href="#about"
+                            onClick={() => this.handleActiveLink("about")}
+                            id={about ? "active" : ""}
+                        >
+                            About Us
+                        </a>
+                        <a
+                            href="#menu"
+                            onClick={() => this.handleActiveLink("menu")}
+                            id={menu ? "active" : ""}
+                        >
+                            Menu
+                        </a>
+                        <a
+                            href="#location"
+                            onClick={() => this.handleActiveLink("location")}
+                            id={location ? "active" : ""}
+                        >
+                            Location
+                        </a>
+                        <a
+                            href="#chef"
+                            onClick={() => this.handleActiveLink("chef")}
+                            id={chef ? "active" : ""}
+                        >
+                            Chef
+                        </a>
+                        <a
+                            href="#contact"
+                            onClick={() => this.handleActiveLink("contact")}
+                            id={contact ? "active" : ""}
+                        >
+                            Contact us
+                        </a>
+                    </Nav>
                 </Navbar>
             </Styles>
         );
