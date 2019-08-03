@@ -12,12 +12,14 @@ import LocationApp from "./components/location/LocationApp";
 import FooterApp from "./components/footer/FooterApp";
 import LoadingAnimation from "./components/loadingAnimation/LoadingAnimation";
 import TeamApp from "./components/team/TeamApp";
+import ReservationApp from "./components/reservation/ReservationApp";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
     faStar,
     faPhone,
     faWifi,
-    faBars
+    faBars,
+    faChevronCircleDown
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebookF,
@@ -32,7 +34,8 @@ library.add(
     faFacebookF,
     faTwitter,
     faGooglePlusG,
-    faBars
+    faBars,
+    faChevronCircleDown
 );
 
 class App extends PureComponent {
@@ -90,6 +93,7 @@ class App extends PureComponent {
                         <OurMenuApp />
                         <LocationApp theme={logo} />
                         <TeamApp />
+                        <ReservationApp />
                         <FooterApp />
                     </Container>
                 </React.Fragment>

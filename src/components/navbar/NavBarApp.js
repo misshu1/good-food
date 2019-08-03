@@ -87,7 +87,7 @@ class NavBarApp extends PureComponent {
                             Contact us
                         </a>
                     </Nav>
-                    <Nav className="mobile-menu">
+                    <Nav className="mobile-menu" tabIndex="0">
                         <a
                             href="#home"
                             onClick={() => this.handleActiveLink("home")}

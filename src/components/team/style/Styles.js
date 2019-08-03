@@ -28,19 +28,22 @@ export const Styles = styled.section`
     }
 
     p {
+        position: relative;
         font-style: italic;
         font-size: 3vw;
     }
 
     p::before {
         content: "“";
-        left: 0;
         font-size: 2rem;
         line-height: 0.2;
     }
     p::after {
+        display: inline-block;
+        width: 100%;
         content: "”";
-        left: 0;
+        text-align: right;
+        padding-right: 0.5rem;
         font-size: 2rem;
         line-height: 0.2;
     }
