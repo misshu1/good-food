@@ -42,18 +42,18 @@ export const Styles = styled.section`
         width: fit-content;
         opacity: 0;
         animation: ${fadeIn} 0.3s ease-out forwards;
-        animation-delay: 3.7s;
+        animation-delay: 0.7s;
     }
     .left-text {
         opacity: 0;
         animation: ${slideDown} 0.5s ease-out forwards;
-        animation-delay: 3.9s;
+        animation-delay: 0.9s;
     }
 
     .right-text {
         opacity: 0;
         animation: ${slideUp} 0.5s ease-out forwards;
-        animation-delay: 3.9s;
+        animation-delay: 0.9s;
     }
 
     p {

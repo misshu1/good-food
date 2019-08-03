@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 const LoadingAnimation = props => {
     return (
-        <Styles>
+        <Styles className="loading-screen">
             <Container className="container1">
                 <Logo className="logo" logo={props.logo}>
                     <span className="text">Good</span>

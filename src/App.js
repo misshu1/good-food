@@ -24,12 +24,25 @@ library.add(faStar, faPhone, faWifi, faFacebookF, faTwitter, faGooglePlusG);
 class App extends PureComponent {
     state = {
         theme: localStorage.theme === "red" ? RedTheme : GreenTheme,
-        logo: localStorage.theme === "red" ? "red" : "green"
+        logo: localStorage.theme === "red" ? "red" : "green",
+        loading: localStorage.loading === "false" ? "false" : null
     };
 
     componentDidMount = () => {
         if (!localStorage.theme) {
             localStorage.setItem("theme", "green");
+        }
+        this.loadingAnimationHandler();
+    };
+
+    loadingAnimationHandler = () => {
+        if (!localStorage.loading) {
+            localStorage.setItem("loading", "false");
+            setTimeout(() => {
+                this.setState({
+                    loading: "false"
+                });
+            }, 3000);
         }
     };
 
@@ -54,9 +67,9 @@ class App extends PureComponent {
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
-                    <GlobalStyles />
+                    <GlobalStyles loading={loading} />
                     <LoadingAnimation logo={logo} />
-                    <Container>
+                    <Container className="app">
                         <NavBarApp logo={logo} changeTheme={this.changeTheme} />
                         <ShowcaseApp />
                         <AboutUsApp themeColor={logo} />

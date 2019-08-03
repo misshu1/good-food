@@ -7,4 +7,12 @@ export const GlobalStyles = createGlobalStyle`
 * {
     transition: background .2s, color .2s;
 }
+
+.app {
+    display: ${props => (props.loading === "false" ? "block" : "none")}
+}
+
+.loading-screen {
+    display: ${props => (props.loading === "false" ? "none" : "block")}
+}
 `;
