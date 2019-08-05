@@ -21,7 +21,11 @@ const GreenTheme = {
     locationBackground: green,
 
     //Footer Colors
-    iconsColor: green
+    iconsColor: green,
+
+    //Reservation Colors
+    buttonBackground: green,
+    buttonColor: secondary
 };
 
 export default GreenTheme;

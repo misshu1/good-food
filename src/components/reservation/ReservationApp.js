@@ -24,7 +24,6 @@ class ReservationApp extends PureComponent {
                         <FormControl
                             placeholder="Location"
                             aria-label="Location"
-                            onKeyDown={e => e.preventDefault()}
                         />
                         <InputGroup.Prepend>
                             <InputGroup.Text id="basic-addon1">
@@ -39,7 +38,6 @@ class ReservationApp extends PureComponent {
                         <FormControl
                             placeholder="Table Nr."
                             aria-label="Table number"
-                            onKeyDown={e => e.preventDefault()}
                         />
                         <InputGroup.Prepend>
                             <InputGroup.Text id="basic-addon1">
@@ -51,11 +49,7 @@ class ReservationApp extends PureComponent {
                         </InputGroup.Prepend>
                     </InputGroup>
                     <InputGroup>
-                        <FormControl
-                            placeholder="Date"
-                            aria-label="Date"
-                            onKeyDown={e => e.preventDefault()}
-                        />
+                        <FormControl placeholder="Date" aria-label="Date" />
                         <InputGroup.Prepend>
                             <InputGroup.Text id="basic-addon1">
                                 <FontAwesomeIcon
@@ -69,7 +63,6 @@ class ReservationApp extends PureComponent {
                         <FormControl
                             placeholder="7:00 PM"
                             aria-label="start hour"
-                            onKeyDown={e => e.preventDefault()}
                         />
                         <InputGroup.Prepend className="mr-1">
                             <InputGroup.Text>
@@ -83,7 +76,6 @@ class ReservationApp extends PureComponent {
                             placeholder="8:00 PM"
                             aria-label="end hour"
                             className="ml-1"
-                            onKeyDown={e => e.preventDefault()}
                         />
                         <InputGroup.Prepend>
                             <InputGroup.Text>

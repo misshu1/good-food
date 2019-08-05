@@ -21,7 +21,11 @@ const RedTheme = {
     locationBackground: secondary,
 
     //Footer Colors
-    iconsColor: red
+    iconsColor: red,
+
+    //Reservation Colors
+    buttonBackground: red,
+    buttonColor: primary
 };
 
 export default RedTheme;

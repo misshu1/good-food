@@ -37,8 +37,8 @@ export const Styles = styled.section`
         outline: none;
         border: none;
         text-transform: uppercase;
-        color: #000;
-        background: ${props => props.theme.textColor};
+        color: ${props => props.theme.buttonColor};
+        background: ${props => props.theme.buttonBackground};
         font-weight: 900;
     }
 
